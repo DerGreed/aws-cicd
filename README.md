@@ -39,7 +39,7 @@
    ```
    und zusammen mit dem Namen des Users (`ec2-user`) als GitHub Repo Secret speichern (`EC2_HOST` und `EC2_USER`)
 9. Backend in `backend/` erstellen (inkl. `docker-compose.yml` im aktuellen Ordner) und pushen für automatisches Deployment
-10. Um Frontend und Backend zu verbinden, muss ein API-Gateway erstellt werden (IP durch die entsprechende ersetzen):
+10. Um Frontend und Backend zu verbinden, muss ein API-Gateway erstellt werden:
     ```
     aws cloudformation deploy \
       --template-file infra/api-gateway.yml \
@@ -48,9 +48,9 @@
       --capabilities CAPABILITY_NAMED_IAM
     ```
 11. Im Frontend die URL des Backends eintragen, um API zu nutzen:
-   ```
-   aws cloudformation describe-stacks \
-   --stack-name backend-api-gateway \
-   --query "Stacks[0].Outputs[?OutputKey=='ApiInvokeUrl'].OutputValue" \
-   --output text
-   ```
+    ```
+    aws cloudformation describe-stacks \
+    --stack-name backend-api-gateway \
+    --query "Stacks[0].Outputs[?OutputKey=='ApiInvokeUrl'].OutputValue" \
+    --output text
+    ```
