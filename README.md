@@ -1,4 +1,4 @@
-1. IAM-User erstellen und Berechtigungen erteilen (Cloudformation, S3, EC2, API-Gateway)
+1. IAM-User erstellen und Berechtigungen erteilen (CloudFormation, CloudFront, S3, EC2, API-Gateway)
 2. Credentials erstellen und als GitHub Secrets abspeichern (`AWS_ACCESS_KEY_ID` und `AWS_SECRET_ACCESS_KEY`)
 3. Wenn nicht eingeloggt: `aws sso login` oder Credentials abspeichern.
 4. Frontend-Stack deployen:
