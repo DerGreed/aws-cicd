@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'public/**'
-      - '.github/workflows/frontend-workflow.yaml'
+      - '.github/workflows/frontend-workflow.yml'
 
 jobs:
   deploy:

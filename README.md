@@ -4,7 +4,7 @@
 4. Frontend-Stack deployen:
 ```
 aws cloudformation deploy \
-  --template-file infra/frontend.yaml \
+  --template-file infra/frontend.yml \
   --stack-name frontend-stack \
   --capabilities CAPABILITY_NAMED_IAM
 ```
@@ -13,7 +13,7 @@ aws cloudformation deploy \
 7. Backend deployen:
 ```
 aws cloudformation deploy \
-  --template-file infra/backend.yaml \
+  --template-file infra/backend.yml \
   --stack-name backend-stack \
   --parameter-overrides SshPublicKey="$(cat secrets/backend_key.pub)" \
   --capabilities CAPABILITY_NAMED_IAM
