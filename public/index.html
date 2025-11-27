@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Mini Cloud Native App</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <img src="Kleo.jpg" alt="Logo" />
@@ -13,25 +14,5 @@
     <button onclick="loadUsers()">Benutzer laden</button>
 
     <pre id="output">Noch keine Daten geladen…</pre>
-
-    <script>
-      async function loadUsers() {
-        return;
-        try {
-          const res = await fetch(
-            "https://backend-url-einfuegen/prod/users"
-          );
-          const data = await res.json();
-          document.getElementById("output").textContent = JSON.stringify(
-            data,
-            null,
-            2
-          );
-        } catch (err) {
-          document.getElementById("output").textContent =
-            "Fehler: " + err.message;
-        }
-      }
-    </script>
   </body>
 </html>
